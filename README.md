@@ -14,10 +14,12 @@ sudo usermod -aG docker pi
 
 
 ### docker-compose
-sudo apt-get update
+sudo apt-get install -y libffi-dev libssl-dev
 
-sudo apt-get -yy python python-pip
+sudo apt-get install -y python3 python3-pip
 
-sudo pip install docker-compose 
+sudo apt-get remove python-configparser
+
+sudo pip3 -v install docker-compose
 
 
