@@ -37,7 +37,7 @@ services:
       - ./config/grafana.ini:/etc/grafana/grafana.ini
     container_name: grafana
   nodered:
-    build: build
+    build: build/nodered.Dockerfile
     image: elzekool/rpi-nodered
     ports:
         - "1880:1880"
