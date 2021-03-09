@@ -1,5 +1,4 @@
 FROM hypriot/rpi-node:7.4
-MAINTAINER Elze Kool <info@kooldevelopment.nl>
 
 # Install Node-RED Globally
 RUN npm install -g node-red
@@ -24,6 +23,8 @@ RUN npm install -g node-red-node-email \
 RUN npm install -g node-red-node-pi-sense-hat \
  && npm install -g node-red-node-serialport --unsafe-perm --build-from-source \
  && npm install -g node-red-node-pi-neopixel
+ 
+RUN npm install -g node-red-contrib-alexa-local
 
 # Install NeoPixel python library
 RUN buildDeps='build-essential python-dev git scons swig' \
