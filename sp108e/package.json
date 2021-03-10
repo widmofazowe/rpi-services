@@ -1,0 +1,15 @@
+{
+  "name": "sp108e-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "install": "^0.13.0",
+    "npm": "^7.6.2",
+    "sp108e": "0.0.5"
+  }
+}

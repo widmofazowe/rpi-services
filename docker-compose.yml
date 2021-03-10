@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   portainer:
     image: "portainer/portainer:arm"
@@ -36,3 +36,10 @@ services:
       - /var/log/grafana:/var/log/grafana
       - ./config/grafana.ini:/etc/grafana/grafana.ini
     container_name: grafana
+
+  sp108e:
+    build: "sp108e"
+    restart: unless-stopped
+    ports:
+      - "13000:3000"
+    container_name: sp108e
