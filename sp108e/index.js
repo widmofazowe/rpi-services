@@ -78,13 +78,12 @@ runCommand = async (cmd) => {
   }
 
   if (cmd[0] === "toggle" || cmd[0] === "power" || cmd[0] === "turn") {
-    if (cmd.length === 1) {
-      return await p.toggleOnOff();
-    } else if (cmd[1] === "off") {
+    if (cmd[1] === "off") {
       return await p.off();
-    } else {
+    } else if (cmd[1] === "on") {
       return await p.on();
     }
+    return await p.toggleOnOff();
   }
 
   if (cmd[0] === "on") {
@@ -99,12 +98,6 @@ runCommand = async (cmd) => {
     await p.on();
     await p.setColor("FF6717");
     return await p.setBrightness(5);
-  }
-
-  if (cmd[0] === "power") {
-    try {
-      return await p.toggleOnOff();
-    } catch (err) {}
   }
 
   if (cmd[0] === "status") {
