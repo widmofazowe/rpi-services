@@ -2,7 +2,7 @@ version: "3"
 services:
   portainer:
     image: "portainer/portainer:arm"
-    restart: unless-stopped
+    restart: always
     ports:
       - "9000:9000"
     volumes:
@@ -12,7 +12,7 @@ services:
 
   influxdb:
     image: "hypriot/rpi-influxdb:1.2.2"
-    restart: unless-stopped
+    restart: always
     ports:
       - "8086:8086"
     volumes:
@@ -26,7 +26,7 @@ services:
 
   grafana:
     image: "fg2it/grafana-armhf:v4.6.3"
-    restart: unless-stopped
+    restart: always
     ports:
       - "3000:3000"
     links:
@@ -39,14 +39,14 @@ services:
 
   sp108e:
     build: "sp108e"
-    restart: unless-stopped
+    restart: always
     ports:
       - "13000:3000"
     container_name: sp108e
 
   mi_home:
     build: "mi-home"
-    restart: unless-stopped
+    restart: always
     ports:
       - "14000:4000"
     container_name: mi_home
