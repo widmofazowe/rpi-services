@@ -24,12 +24,14 @@ const { sp108e } = require("sp108e");
 const COLOR_MAP = require("sp108e/colors");
 const ANIMATION_MAP = require("sp108e/animations");
 
+require("dotenv").config();
+
 const app = express();
 const port = 3000;
 
 const sp108e_options = {
-  host: "192.168.50.196",
-  port: 8189,
+  host: process.env.SP108E_IP,
+  port: process.env.SP108E_PORT || 8189,
 };
 
 runCommand = async (cmd) => {

@@ -1,6 +1,7 @@
 {
-  "name": "sp108e-api",
+  "name": "mi-home",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index"
@@ -9,8 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "install": "^0.13.0",
-    "npm": "^7.6.2",
-    "sp108e": "0.0.5"
+    "express": "^4.17.1",
+    "miio": "git+https://github.com/widmofazowe/miio.git"
   }
 }

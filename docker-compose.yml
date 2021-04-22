@@ -43,3 +43,10 @@ services:
     ports:
       - "13000:3000"
     container_name: sp108e
+
+  mi_home:
+    build: "mi-home"
+    restart: unless-stopped
+    ports:
+      - "14000:4000"
+    container_name: mi_home
