@@ -1,5 +1,4 @@
-FROM node:14.15.0-alpine
-RUN apk update && apk add git
+FROM timbru31/node-alpine-git:latest
 WORKDIR /app
 COPY package*.json ./
 RUN npm install --production

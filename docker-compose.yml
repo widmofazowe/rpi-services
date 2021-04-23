@@ -3,10 +3,11 @@ services:
   portainer:
     image: "portainer/portainer:arm"
     restart: always
+    command: --admin-password "$$2y$$05$$1rp2t2s2/E/3E.LHKjTAlewxX3NZeEqxtB58Dc8AWAYkSvXCcPJMm"
     ports:
       - "9000:9000"
     volumes:
-      - /var/portainer:/data
+      - portainer_data:/data
       - /var/run/docker.sock:/var/run/docker.sock
     container_name: portainer
 
@@ -43,6 +44,9 @@ services:
     ports:
       - "13000:3000"
     container_name: sp108e
+    environment:
+      - SP108E_IP=${SP108E_IP}
+      - SP108E_PORT=${SP108E_PORT}
 
   mi_home:
     build: "mi-home"
@@ -50,3 +54,9 @@ services:
     ports:
       - "14000:4000"
     container_name: mi_home
+    environment:
+      - ROBOROCK_IP=${ROBOROCK_IP}
+      - ROBOROCK_TOKEN=${ROBOROCK_TOKEN} 
+
+volumes:
+  portainer_data:

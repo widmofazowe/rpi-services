@@ -24,6 +24,8 @@ app.get("/roborock/:method", async (req, res) => {
     });
 });
 
-app.listen(port, () =>
-  console.log(`MI-HOME API listening at http://localhost:${port}`)
-);
+app.listen(port, () => {
+  console.log(`MI-HOME API listening at http://localhost:${port}`);
+  console.log(process.env.ROBOROCK_IP);
+});
+
